@@ -1,0 +1,8 @@
+dom
+1，获取  id  class tagname  name,
+2，id获取的是单个元素节点
+	class tagname name 获取的多个元素节点 以数组方式储存 
+	要想获取某一个节点  ，通过下标
+innerHTML 获取的是包含标签的内容
+innertext 获取的纯内容  不包含标签
+
