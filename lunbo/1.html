@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .wu{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: brown;
+        display: inline-block;
+        text-align: center;
+        line-height: 40px;
+    }
+    .you{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: blue;
+        display: inline-block;
+        text-align: center;
+        line-height: 40px;
+    }
+    </style>
+</head>
+
+<body>
+    <img src="5.jpg" width="1024px" height="576px" sizes="100%" id="tu">
+ <div>
+    <span class="wu" onmouseover="mouse()">1</span>
+    <span class="wu" onmouseover="mouse()">2</span>
+    <span class="wu" onmouseover="mouse()">3</span>
+    <span class="wu" onmouseover="mouse()">4</span>
+    <span class="wu" onmouseover="mouse()">5</span>
+</div>
+</body>
+<script type="text/javascript">
+    var im = document.getElementById("tu");
+    var iyou = document.getElementsByTagName("span");
+    //var i = 0;
+    var i  = document.this.innerTEXT;
+        console.log(i);  
+    // setInterval(lun,1000);
+    // function lun() {  
+    
+    //     i++;
+    //     if (i == 6) {
+    //         i = 1;
+    //     }
+    //     im.src = i + ".jpg";
+        
+    //    // iyou[i].style.class = "you";   
+    // }
+//     function mouse(a){
+//      // im.src = this.innerhtml+".jpg";
+//        im.src = a+".jpg";
+//     console.log(a);
+//    }
+
+    // function mouse(num) {
+    //     var a = document.getElementsByClassName("wu");
+    //     console.log(a[num].innerHTML);
+        
+    // }
+    function mouse(){
+        im.src = this.innerHTML+".jpg";
+        console.log(this.innerHTML);
+    }
+  
+
+</script>
+
+</html>
