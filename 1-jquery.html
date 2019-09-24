@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img src="1.jpg" id="tupian">
+    <div>
+        <span onmouseover="dian(1)" onmouseout="dian2()">01</span>
+        <span onmouseover="dian(2)" onmouseout="dian2()">02</span>
+        <span onmouseover="dian(3)" onmouseout="dian2()">03</span>
+        <span onmouseover="dian(4)" onmouseout="dian2()">04</span>
+        <span onmouseover="dian(5)" onmouseout="dian2()">05</span>
+    </div>
+
+
+
+</body>
+<script src="file:/D:/WAMP/PHPTutorial/WWW/PPPPPHP/jquery.js"></script>
+<script type="text/javascript">
+    //检测Jquery是否加载成功
+    // $(document).ready(function () {
+    // })
+    //给img添加样式
+    // $('#tupian').css('background-color',"red");
+    $('#tupian').css({ 'width': '1024px', 'height': '576px' });
+    //给span添加样式
+    $('div>span').css({
+        'width': '40px', "height": '40px', "border-radius": "50%", 'display': 'inline-block', 'background-color': 'red', 'text-align': 'center'
+        , 'line-height': '40px'
+    })
+    //获取img
+    var iMg = document.getElementById('tupian');
+    //定义一个全局变量
+    var i = 1;
+    //获取span的值（数组）
+    //var sPan = document.getElementsByTagName('span');
+    var set = setInterval(zhuan, 1000);
+   // setInterval(zhuan, 1000);
+   setInterval(dian2,1000);
+    function zhuan() {
+        i++;
+        if (i == 6) {
+            i = 1;
+        }
+        iMg.src = i + ".jpg";
+    }
+    function dian(num) {
+       clearInterval(set);
+           i = num;
+           iMg.src = i+".jpg";
+           clearInterval(set);
+           setInterval(set, 1000);
+          //  $('').html().css('background-color',"black");
+    }
+    function dian2() {
+       // clearInterval(set);
+        //setInterval(zhuan, 1000);
+      console.log("1");
+      i++;
+        if (i == 6) {
+            i = 1;
+        }
+        iMg.src = i + ".jpg";
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
