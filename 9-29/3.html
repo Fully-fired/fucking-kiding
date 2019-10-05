@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>居住地</td>
+        </tr>
+        <tr>
+            <td>源氏</td>
+            <td>男</td>
+            <td>日本</td>
+        </tr>
+        <tr>
+            <td>半藏</td>
+            <td>男</td>
+            <td>日本</td>
+        </tr>
+        <tr>
+            <td>安娜</td>
+            <td>女</td>
+            <td>埃及</td>
+        </tr>
+        <tr>
+            <td>D.va</td>
+            <td>女</td>
+            <td>韩国</td>
+        </tr>
+        <tr>
+            <td>狂鼠</td>
+            <td>男</td>
+            <td>澳大利亚</td>
+        </tr>
+    </table>
+    <input type="button" value="隔行变色" id="a" onclick="b()">
+    <input type="text" id="aa">
+    <input type="button" value="查询" id="aaa" onclick="c()">
+</body>
+<script src=" file:\D:\WAMP\PHPTutorial\WWW\PPPPPHP\jquery.js"></script>
+<script type="text/javascript">
+    // $('#a').click(
+    //     $('tr:odd').css("background-color","red")
+    // )    
+    var num=0;
+    function b() {
+        num = num+1
+        if (num % 2 == 1) {
+            $('tr:odd').css("background-color", "red")
+            $('tr:even').css("background-color", "white")
+            //console.log(1);
+        } else {
+            $('tr:even').css("background-color", "red")
+            $('tr:odd').css("background-color", "white")
+          //  console.log(2);
+        }
+        
+        console.log(num)
+    }
+    // var num=0;
+    //     function b() {
+            
+    //         num = num+1;
+    //         console.log(num);
+    //     }
+
+
+
+
+
+
+
+
+
+
+
+    //$('tr:even').css("background-color","red")
+
+
+
+
+    var i = 0;
+    //var neirong = $('tr').eq(1).text()
+
+    function c() {
+        setInterval(
+            function () {
+
+                i++;
+                var wenben = $('#aa').val()
+                var neirong = $('tr').eq(i).text()
+                //console.log(typeof(neirong))
+                if (neirong.indexOf(wenben) >= 0) {
+                    $('tr').eq(i).css("color", "blue")
+
+                }
+
+                //console.log(neirong.indexOf(wenben))      
+                // console.log(neirong)
+            }, 1)
+        i = 0
+        $('tr').css("color", "black")
+    }
+
+</script>
+<!--
+    for(var i=0;i<$('table tr').length-1;i++){
+		Addr[i] = $('tr').eq(i+1).children().eq(2).text();
+		if(Addr[i] == '湖南长沙'){
+			$('tr').eq(i+1).css('background','red')
+		}
+	}
+-->
+
+</html>

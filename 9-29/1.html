@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="overflow: hidden;">
+    
+</body>
+<script src="D:\PPT\9-23\jquery.js"></script>
+<script type="text/javascript">
+var snow = $('<div></div>').html(' <img src="QQ.png" alt="" srcset="" style="width:200px;">').css({"position":"absolute","width":"10px"});
+// var snow1 = $('<div></div>').html('打').css("position", "absolute");
+// var snow2 = $('<div></div>').html('球').css("position", "absolute");
+// var snow3 = $('<div></div>').html('像').css("position", "absolute");
+// var snow4 = $('<div></div>').html('蔡').css("position", "absolute");
+// var snow5 = $('<div></div>').html('徐').css("position", "absolute");
+// var snow6 = $('<div></div>').html('坤').css("position", "absolute");
+var snowmin = 30;
+var snowmax = 40;
+//var color = rgb( Math.ceil(Math.random()*255), Math.ceil(Math.random()*255), Math.ceil(Math.random()*255));
+var color = 'red';
+var winWidth = $(window).width();
+var winHeight = $(window).height();
+$(function() {
+    setInterval(function() {
+        snow.clone().appendTo($('body')).css({
+            "left":winWidth*Math.random(),
+            "color":color,
+            "font-size":Math.random()*30+10,
+            "top":-500
+        }).animate({
+            'left':winWidth*Math.random(),
+            'top':winHeight+snowmax
+        },3000,function () {
+            $(this).remove();
+        })
+
+    },50)
+})
+// $(function() {
+//     setInterval(function() {
+//         snow1.clone().appendTo($('body')).css({
+//             "left":winWidth*Math.random(),
+//             "color":color,
+//             "font-size":Math.random()*30+10,
+//             "top":-55
+//         }).animate({
+//             'left':winWidth*Math.random(),
+//             'top':winHeight+snowmax
+//         },3000,function () {
+//             $(this).remove();
+//         })
+
+//     },100)
+// })
+// $(function() {
+//     setInterval(function() {
+//         snow2.clone().appendTo($('body')).css({
+//             "left":winWidth*Math.random(),
+//             "color":color,
+//             "font-size":Math.random()*30+10,
+//             "top":-55
+//         }).animate({
+//             'left':winWidth*Math.random(),
+//             'top':winHeight+snowmax
+//         },3000,function () {
+//             $(this).remove();
+//         })
+
+//     },100)
+// })
+// $(function() {
+//     setInterval(function() {
+//         snow3.clone().appendTo($('body')).css({
+//             "left":winWidth*Math.random(),
+//             "color":color,
+//             "font-size":Math.random()*30+10,
+//             "top":-55
+//         }).animate({
+//             'left':winWidth*Math.random(),
+//             'top':winHeight+snowmax
+//         },3000,function () {
+//             $(this).remove();
+//         })
+
+//     },100)
+// })
+// $(function() {
+//     setInterval(function() {
+//         snow5.clone().appendTo($('body')).css({
+//             "left":winWidth*Math.random(),
+//             "color":color,
+//             "font-size":Math.random()*30+10,
+//             "top":-55
+//         }).animate({
+//             'left':winWidth*Math.random(),
+//             'top':winHeight+snowmax
+//         },3000,function () {
+//             $(this).remove();
+//         })
+
+//     },100)
+// })
+// $(function() {
+//     setInterval(function() {
+//         snow6.clone().appendTo($('body')).css({
+//             "left":winWidth*Math.random(),
+//             "color":color,
+//             "font-size":Math.random()*30+10,
+//             "top":-55
+//         }).animate({
+//             'left':winWidth*Math.random(),
+//             'top':winHeight+snowmax
+//         },3000,function () {
+//             $(this).remove();
+//         })
+
+//     },100)
+// })
+// $(function() {
+//     setInterval(function() {
+//         snow4.clone().appendTo($('body')).css({
+//             "left":winWidth*Math.random(),
+//             "color":color,
+//             "font-size":Math.random()*30+10,
+//             "top":-55
+//         }).animate({
+//             'left':winWidth*Math.random(),
+//             'top':winHeight+snowmax
+//         },3000,function () {
+//             $(this).remove();
+//         })
+
+//     },100)
+// })
+
+
+
+
+</script>
+</html>

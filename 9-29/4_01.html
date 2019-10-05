@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" name="a" class="cbox" >唱
+    <input type="checkbox" name="a" class="cbox">跳
+    <input type="checkbox" name="a" class="cbox">rap
+    <input type="checkbox" name="a" class="cbox">篮球
+    <input type="button" value="全选">
+    <input type="button" value="全不选">
+    <input type="button" value="反选" id = 'fanxuan'>
+    <input type="button" value="提交">
+   
+</body>
+<script src=" file:\D:\WAMP\PHPTutorial\WWW\PPPPPHP\jquery.js"></script>
+<script type="text/javascript">
+$('#fanxuan').click(function () {
+    for(i =0;i<=3;i++ ){
+        // $(".cbox:eq("+i+")").attr("checked");
+        console.log($(".cbox:eq("+i+")").prop("checked"));
+            if($(".cbox:eq("+i+")").prop("checked") == "checked"){
+                $(".cbox:eq("+i+")").prop("checked") = "checked";
+        }else{
+                $(".cbox:eq("+i+")").prop("checked") ="";
+        }
+    }
+    
+
+})
+
+</script>
+
+</html>

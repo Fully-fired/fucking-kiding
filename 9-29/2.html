@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    img{
+        position: absolute;
+        height:  50%;
+        width:  50%;
+    }
+    .span{
+        margin: 10px;
+        top: 500px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        border-radius: 50%;
+        line-height: 30px;
+        text-align: center;
+    }
+    #d2{
+        margin-top: 500px;
+        position: fixed;
+        width: 500px;
+        height: 50px;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="1.jpg" alt="" srcset="">
+        <img src="2.jpg" alt="" srcset="">
+        <img src="3.jpg" alt="" srcset="">
+        <img src="4.jpg" alt="" srcset="">
+        <img src="5.jpg" alt="" srcset="">
+    </div>
+    <div id=d2>
+    <span class="span">1</span>
+    <span class="span">2</span>
+    <span class="span">3</span>
+    <span class="span">4</span>
+    <span class="span">5</span>
+    <span id="jian">←</span>
+    <span id="jia">→</span>
+</div>
+</body>
+<script src="D:\PPT\9-23\jquery.js"></script>
+<script type="text/javascript">
+var i = 0;
+$(function () {
+    
+
+$('.span').click(function() {
+    $(this).css("background-color","green").siblings().css("background-color","red")
+    i = $(this).index()
+    $('img').eq(i).fadeIn().siblings().fadeOut();
+})
+
+$('#jian').click(function () {
+    i = i-1
+    $('.span').eq(i).css("background-color","green").siblings().css("background-color","red")
+    $('img').eq(i).fadeIn().siblings().fadeOut();
+})
+$('#jia').click(function () {
+    i = i+1
+    $('.span').eq(i).css("background-color","green").siblings().css("background-color","red")
+    $('img').eq(i).fadeIn().siblings().fadeOut();
+})
+})
+
+
+
+
+
+    //     $('img').eq(i).fadeIn().siblings().fadeOut();
+   // $(this).css('background-color',"red").siblings().css('background-color',"red");
+
+
+
+// setInterval(function () {
+//     i++;
+//     if (i==5) {
+//         i = 0;
+//     }
+//     $('img').eq(i).fadeIn().siblings().fadeOut();
+//     //console.log(i);
+// },1500)    
+
+
+
+
+
+
+
+
+
+</script>
+</html>

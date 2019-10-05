@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>计算器</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        .panel {
+            border: 4px solid #ddd;
+            width: 192px;
+            margin: 100px auto;
+            /*border-radius: 6px;*/
+        }
+
+        .panel p,
+        .panel input {
+            font-family: "微软雅黑";
+            font-size: 20px;
+            margin: 4px;
+            float: left;
+            /*border-radius: 4px;*/
+        }
+
+        .panel p {
+            width: 122px;
+            height: 26px;
+            border: 1px solid #ddd;
+            padding: 6px;
+            overflow: hidden;
+        }
+
+        .panel input {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel">
+        <div>
+            <p id="screen"></p>
+            <input type="button" value="C" id="clean">
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <input type="button" value="7" id="num7">
+            <input type="button" value="8" id="num8">
+            <input type="button" value="9" id="num9">
+            <input type="button" value="/" id="chu">
+
+            <input type="button" value="4" id="num4">
+            <input type="button" value="5" id="num5">
+            <input type="button" value="6" id="num6">
+            <input type="button" value="*" id="cheng">
+
+            <input type="button" value="1" id="num1">
+            <input type="button" value="2" id="num2">
+            <input type="button" value="3" id="num3">
+            <input type="button" value="-" id="jian">
+
+            <input type="button" value="0" id="num0">
+            <input type="button" value="." id="dian">
+            <input type="button" value="=" id="deng">
+            <input type="button" value="+" id="jia">
+
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</body>
+<script src=" file:\D:\WAMP\PHPTutorial\WWW\PPPPPHP\jquery.js"></script>
+<script type="text/javascript">
+
+    //数字键
+    $('#num0').on('click', function () {
+        $('#screen').append('0');
+    })
+    $('#num1').on('click', function () {
+        $('#screen').append('1');
+    })
+    $('#num2').on('click', function () {
+        $('#screen').append('2');
+    })
+    $('#num3').on('click', function () {
+        $('#screen').append('3');
+    })
+    $('#num4').on('click', function () {
+        $('#screen').append('4');
+    })
+    $('#num5').on('click', function () {
+        $('#screen').append('5');
+    })
+    $('#num6').on('click', function () {
+        $('#screen').append('6');
+    })
+    $('#num7').on('click', function () {
+        $('#screen').append('7');
+    })
+    $('#num8').on('click', function () {
+        $('#screen').append('8');
+    })
+    $('#num9').on('click', function () {
+        $('#screen').append('9');
+    })
+    //清除键
+    $('#clean').on('click', function () {
+        $('#screen').empty()
+    })
+    //点
+    $('#dian').on('click',function() {
+        $('#screen').append(".")
+    })
+    //算法
+    //点击运算符号时 获取其中的内容并清除掉 得到a 再点击数字键 再点击等于 再获取值得到b 然后a再与b计算得值
+    var i = 0
+    var firstNum = 0
+    //加法
+    $('#jia').on('click', function () {
+        firstNum = $('#screen').text()
+        //console.log(a)
+        $('#screen').empty()
+        i = 1
+    })
+    //减法
+    $('#jian').on('click', function () {
+        firstNum = $('#screen').text()
+        //console.log(a)
+        $('#screen').empty()
+        i = 2
+    })
+    //乘法
+    $('#cheng').on('click', function () {
+        firstNum = $('#screen').text()
+        //console.log(a)
+        $('#screen').empty()
+        i = 3
+    })
+    //除法
+    $('#chu').on('click', function () {
+        firstNum = $('#screen').text()
+        //console.log(a)
+        $('#screen').empty()
+        i = 4
+    })
+    console.log(typeof (firstNum))
+
+
+    //等于
+    $('#deng').on('click', function () {
+        var secondNum = $('#screen').text()
+        if (i == 1) {
+            var answer = Number(firstNum) + Number(secondNum);
+            $('#screen').text(answer)
+        } else if (i == 2) {
+            var answer = firstNum - secondNum;
+            $('#screen').text(answer)
+        } else if (i == 3) {
+            var answer = firstNum * secondNum;
+            $('#screen').text(answer)
+        } else if (i == 4) {
+            var answer = firstNum / secondNum;
+            $('#screen').text(answer)
+        }
+
+
+
+
+
+
+
+    })
+
+
+
+
+
+
+</script>
+
+</html>

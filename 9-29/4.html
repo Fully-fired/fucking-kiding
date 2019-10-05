@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" name="a" id="" checked="">唱
+    <input type="checkbox" name="a" id="" checked="">跳
+    <input type="checkbox" name="a" id="" checked="">rap
+    <input type="checkbox" name="a" id="" checked="">篮球
+    <input type="button" value="全选">
+    <input type="button" value="全不选">
+    <input type="button" value="反选">
+    <input type="button" value="提交">
+  
+</body>
+<script src=" file:\D:\WAMP\PHPTutorial\WWW\PPPPPHP\jquery.js"></script>
+<script type="text/javascript">
+    $('input').eq(4).click(
+        function () {
+            $('input[type="checkbox"]').prop("checked", true)
+        }
+    )
+    $('input').eq(5).click(
+        function () {
+            $('input[type="checkbox"]').prop("checked", false)
+        }
+    )
+    $('input').eq(6).click(
+         function(){
+             $('input[type="checkbox"]').each(
+                 function() {
+                     if ($(this).prop('checked')==true) {
+                        $(this).prop('checked',false)
+                     }else{
+                        $(this).prop('checked',true)
+                     }
+                 }
+             )
+         }
+    )
+</script>
+
+</html>
